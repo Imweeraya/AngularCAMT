@@ -10,6 +10,7 @@ export class AppComponent {
   imgSrc: string | undefined;
   title: string | undefined; //type script assign to String //default is public //can have more than one type
   count: number;
+  tempCaption: object | null;
   
   // messageList: string[] = [
   //   'Friday, my second favorite F word' , 
@@ -45,9 +46,17 @@ export class AppComponent {
   
 
   constructor(){ //auto call variable should intital
-    let caption = this.randomCaption4();
-    this.title = caption?.message; 
-    this.imgSrc = caption?.icon; 
+    this.tempCaption = this.randomCaption4();
+    // this.title = caption?.message; 
+    // this.imgSrc = caption?.icon; 
+    if (this.tempCaption !== null) {
+      const tempCaptionObj = this.tempCaption as { message: string; icon: string };
+      this.title = tempCaptionObj.message;
+      this.imgSrc = tempCaptionObj.icon;
+    } else {
+      this.title = undefined;
+      this.imgSrc = undefined;
+    }
     this.count = 0;
   }
 
@@ -120,6 +129,36 @@ export class AppComponent {
       id:4,
       message:"Creating art, inspiring hearts.",
       icon:"./assets/cat4.jpg"
+    },
+    {
+      id:5,
+      message:"Sparkling eyes, infectious smiles.",
+      icon:"./assets/cat5.jpg"
+    },
+    {
+      id:6,
+      message:"Inspiring change, igniting hope.",
+      icon:"./assets/cat6.jpg"
+    },
+    {
+      id:7,
+      message:"Striving for balance, inner peace.",
+      icon:"./assets/cat7.jpg"
+    },
+    {
+      id:8,
+      message:"Make life fun, tomorrow isnt guaranteed.",
+      icon:"./assets/cat8.jpg"
+    },
+    {
+      id:9,
+      message:"Chasing dreams, catching stardust.",
+      icon:"./assets/cat9.jpg"
+    },
+    {
+      id:10,
+      message:"Life is full of surprises.",
+      icon:"./assets/cat10.jpg"
     }
   ]; 
 
@@ -145,11 +184,36 @@ export class AppComponent {
     
   }
 
+  Resetbutton(){
+    while(this.usedCaptionList.length != 0){
+      this.usedCaptionList.pop();
+    }
+    this.tempCaption = this.randomCaption4();
+    // this.title = caption?.message; 
+    // this.imgSrc = caption?.icon; 
+    if (this.tempCaption !== null) {
+      const tempCaptionObj = this.tempCaption as { message: string; icon: string };
+      this.title = tempCaptionObj.message;
+      this.imgSrc = tempCaptionObj.icon;
+    } else {
+      this.title = undefined;
+      this.imgSrc = undefined;
+    }
+  }
+
   handleClickButton(){
-    let caption = this.randomCaption4();
-    this.title = caption?.message; 
-    this.imgSrc = caption?.icon; 
-    this.title = this.randomCaption4()?.message;
+    // this.title = this.randomCaption4()?.message;
+    this.tempCaption = this.randomCaption4();
+    // this.title = caption?.message; 
+    // this.imgSrc = caption?.icon; 
+    if (this.tempCaption !== null) {
+      const tempCaptionObj = this.tempCaption as { message: string; icon: string };
+      this.title = tempCaptionObj.message;
+      this.imgSrc = tempCaptionObj.icon;
+    } else {
+      this.title = undefined;
+      this.imgSrc = undefined;
+    }
   }
 
   private getRandomInt(arrayLength: number) { //type scripe should assign type of variable

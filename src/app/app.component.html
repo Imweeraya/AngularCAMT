@@ -27,8 +27,9 @@
     
     <!--{{count}} --> 
     <div *ngIf="title"> {{ title }} </div>  <!-- ngIf ถ้า true จะ render ออกมา --> 
-    <div *ngIf="!title"> Yay 🤩 </div>
-    <button [disabled]="!title" class="btn btn-danger" type="button" (click) = "handleClickButton()">Next Caption 👻</button>
+    <div *ngIf="!title"> Yay 🤩 The caption is over 👏 </div>
+    <button [disabled]="!title" class="btn btn-success" type="button" (click) = "handleClickButton()">Next Caption 👻</button>
+    <button *ngIf="!title" class="btn btn-danger" type="button" (click) = "Resetbutton()"> 🔄 Reset ? </button>
     <!-- property binding : [disabled]="!title" -->
        
     <!-- <div class="captionList">
@@ -45,10 +46,15 @@
   <div class="content2">
     <div class="captionList">
         <ul>
-            <li *ngFor="let captionItem of captionList">{{captionItem.message}}</li>  <!--interpolation  -->
+            <li *ngFor="let captionItem of captionList">{{captionItem.message}} <!--interpolation  -->
+                <img [src]="captionItem.icon">
+
+            </li>  
         </ul>
         <ul>
-          <li *ngFor="let ucaptionItem of usedCaptionList">{{ucaptionItem.message}}</li>
+          <li *ngFor="let ucaptionItem of usedCaptionList">{{ucaptionItem.message}}
+              <img [src]="ucaptionItem.icon">
+          </li>
         </ul>
     </div>
   </div>

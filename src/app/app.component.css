@@ -41,7 +41,7 @@ body {
 .content2 { 
   background-color: rgb(255, 200, 230);
   width: 750px;
-  height: 700px;
+  height: 20%;
   font-family: 'Righteous', cursive;
   font-size: 25px;
   color: rgb(72, 38, 50);
@@ -62,4 +62,9 @@ body {
   flex-direction: row;
   justify-content: space-around;
   font-size: 15px;
+}
+
+.captionList img{
+  width: 25px;
+  border-radius: 10px;
 }
