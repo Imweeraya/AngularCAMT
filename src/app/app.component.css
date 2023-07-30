@@ -1,0 +1,64 @@
+body {
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+  background-image: url(https://img.freepik.com/free-vector/watercolor-sugar-cotton-clouds-background_52683-80661.jpg?w=2000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Set body height to full viewport height */
+}
+
+.content { 
+  background-color: rgb(255, 200, 230);
+  width: 750px;
+  height: 300px;
+  font-family: 'Righteous', cursive;
+  font-size: 25px;
+  color: rgb(72, 38, 50);
+  text-align:center;
+  margin: 5vh auto; /* Center horizontally and 25% from the top vertically */
+  border: 5px dashed rgb(209, 142, 178); 
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 10px 15px rgb(90, 65, 79);
+}
+
+.btn {
+  margin-top: 30px;
+}
+
+.angular_logo{
+  margin: 20px;
+  width: 50px;
+}
+
+
+.content2 { 
+  background-color: rgb(255, 200, 230);
+  width: 750px;
+  height: 700px;
+  font-family: 'Righteous', cursive;
+  font-size: 25px;
+  color: rgb(72, 38, 50);
+  text-align:center;
+  margin: 5vh auto; /* Center horizontally and 25% from the top vertically */
+  border: 5px dashed rgb(209, 142, 178); 
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 10px 15px rgb(90, 65, 79);
+}
+
+.captionList{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 15px;
+}
