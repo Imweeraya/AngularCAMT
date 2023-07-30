@@ -22,7 +22,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <!-- <app-root></app-root> -->
-    <img [src]="imgSrc" class="angular_logo"> <!-- property binding:[src]="imgsrc" ใช้แบบนี้เพื่อเปลี่ยนรูปภาพได้ มักจะใช้ตัวแปรเป็น carmel case -->
+    <!--<img [src]="imgSrc" class="angular_logo"> --><!-- property binding:[src]="imgsrc" ใช้แบบนี้เพื่อเปลี่ยนรูปภาพได้ มักจะใช้ตัวแปรเป็น carmel case -->
+    <img *ngIf="title" [src]="imgSrc" class="icon">
     
     <!--{{count}} --> 
     <div *ngIf="title"> {{ title }} </div>  <!-- ngIf ถ้า true จะ render ออกมา --> 

@@ -7,7 +7,7 @@ import { CaptionItem } from './caption-item';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  imgSrc = "./assets/angular-logo.png";
+  imgSrc: string | undefined;
   title: string | undefined; //type script assign to String //default is public //can have more than one type
   count: number;
   
@@ -42,9 +42,12 @@ export class AppComponent {
   // ];
 
 
+  
 
   constructor(){ //auto call variable should intital
-    this.title = this.randomCaption4()?.message; //is it undefined ? is not .message
+    let caption = this.randomCaption4();
+    this.title = caption?.message; 
+    this.imgSrc = caption?.icon; 
     this.count = 0;
   }
 
@@ -143,6 +146,9 @@ export class AppComponent {
   }
 
   handleClickButton(){
+    let caption = this.randomCaption4();
+    this.title = caption?.message; 
+    this.imgSrc = caption?.icon; 
     this.title = this.randomCaption4()?.message;
   }
 
